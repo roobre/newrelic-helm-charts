@@ -2754,6 +2754,70 @@ entries:
   nri-bundle:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-11-28T13:56:37.883520908Z"
+    dependencies:
+    - condition: infrastructure.enabled
+      name: newrelic-infrastructure
+      repository: file://../newrelic-infrastructure
+      version: 2.7.2
+    - condition: prometheus.enabled
+      name: nri-prometheus
+      repository: file://../nri-prometheus
+      version: 1.10.0
+    - condition: webhook.enabled
+      name: nri-metadata-injection
+      repository: file://../nri-metadata-injection
+      version: 2.1.1
+    - condition: metrics-adapter.enabled
+      name: newrelic-k8s-metrics-adapter
+      repository: file://../newrelic-k8s-metrics-adapter
+      version: 0.1.0
+    - condition: ksm.enabled
+      name: kube-state-metrics
+      repository: https://kubernetes.github.io/kube-state-metrics
+      version: 2.13.2
+    - condition: kubeEvents.enabled
+      name: nri-kube-events
+      repository: file://../nri-kube-events
+      version: 1.11.0
+    - condition: logging.enabled
+      name: newrelic-logging
+      repository: file://../newrelic-logging
+      version: 1.10.3
+    - condition: newrelic-pixie.enabled
+      name: newrelic-pixie
+      repository: file://../newrelic-pixie
+      version: 1.4.2
+    - alias: pixie-chart
+      condition: pixie-chart.enabled
+      name: pixie-operator-helm2-chart
+      repository: https://pixie-operator-charts.storage.googleapis.com
+      version: 0.0.13
+    - condition: newrelic-infra-operator.enabled
+      name: newrelic-infra-operator
+      repository: file://../newrelic-infra-operator
+      version: 0.4.0
+    - condition: otel-k8s-prometheus.enabled
+      name: otel-k8s-prometheus
+      repository: file://../otel-k8s-prometheus
+      version: 0.1.0
+    description: A Helm chart to deploy New Relic integrations bundled together
+    digest: 1de5608156c2cc7af474fe261482449b29bb61e238967c594aad3f44bb211d39
+    home: https://github.com/newrelic/helm-charts
+    icon: https://newrelic.com/assets/newrelic/source/NewRelic-logo-square.svg
+    maintainers:
+    - name: alvarocabanas
+    - name: carlossscastro
+    - name: gsanchezgavier
+    - name: kang-makes
+    - name: paologallinaharbur
+    - name: roobre
+    name: nri-bundle
+    urls:
+    - https://github.com/roobre/newrelic-helm-charts/releases/download/nri-bundle-3.3.0/nri-bundle-3.3.0.tgz
+    version: 3.3.0
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-11-25T07:38:18.954590259Z"
     dependencies:
     - condition: infrastructure.enabled
@@ -8775,6 +8839,19 @@ entries:
     urls:
     - https://github.com/newrelic/helm-charts/releases/download/nri-statsd-1.0.0/nri-statsd-1.0.0.tgz
     version: 1.0.0
+  otel-k8s-prometheus:
+  - apiVersion: v2
+    appVersion: 0.38.0
+    created: "2021-11-28T13:56:38.06196108Z"
+    description: A chart to scrape prometheus endpoints using the opentelemetry collector
+    digest: ce5fd8c3ba8e1402f7206582d2a20e0225dc17afca9c5485c11238e59e594ab7
+    maintainers:
+    - name: roobre
+    name: otel-k8s-prometheus
+    type: application
+    urls:
+    - https://github.com/roobre/newrelic-helm-charts/releases/download/otel-k8s-prometheus-0.1.0/otel-k8s-prometheus-0.1.0.tgz
+    version: 0.1.0
   simple-nginx:
   - apiVersion: v2
     appVersion: "1.1"
@@ -9327,4 +9404,4 @@ entries:
     urls:
     - https://github.com/newrelic/helm-charts/releases/download/synthetics-minion-1.0.17/synthetics-minion-1.0.17.tgz
     version: 1.0.17
-generated: "2021-11-25T07:38:18.956848892Z"
+generated: "2021-11-28T13:56:38.064033595Z"
